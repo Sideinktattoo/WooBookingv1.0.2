@@ -1,0 +1,105 @@
+.wc-booking-reports-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.wc-booking-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.wc-booking-stats .stat-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
+.wc-booking-stats .stat-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.wc-booking-stats .stat-box span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.wc-booking-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.wc-booking-filters select {
+    min-width: 150px;
+    height: 36px;
+}
+
+#wc-booking-calendar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.wc-booking-details-panel {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.wc-booking-details-panel h3 {
+    margin-top: 0;
+}
+
+.fc-event {
+    cursor: pointer;
+}
+
+.fc-event .fc-event-title {
+    white-space: normal;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5em;
+}
+
+.fc-daygrid-event {
+    padding: 2px 4px;
+}
+
+.fc-daygrid-event-dot {
+    display: none;
+}
+
+.fc-event-time {
+    font-weight: bold;
+}
+
+.fc-event-title {
+    margin-left: 5px;
+}
+
+@media (max-width: 1200px) {
+    .wc-booking-reports-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .wc-booking-filters {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .wc-booking-filters select {
+        flex-grow: 1;
+    }
+}
