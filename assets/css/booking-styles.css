@@ -1,0 +1,137 @@
+/* Booking form styles */
+.wc-booking-form {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.wc-booking-form .form-row {
+    margin-bottom: 15px;
+}
+
+.wc-booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.wc-booking-form input[type="text"],
+.wc-booking-form input[type="email"],
+.wc-booking-form input[type="tel"],
+.wc-booking-form input[type="date"],
+.wc-booking-form input[type="time"],
+.wc-booking-form select,
+.wc-booking-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.wc-booking-form .booking-extras {
+    margin-top: 15px;
+}
+
+.wc-booking-form .booking-extras label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* Calendar styles */
+.wc-booking-calendar {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.wc-booking-calendar th {
+    text-align: center;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+.wc-booking-calendar td {
+    padding: 10px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.wc-booking-calendar .bookable {
+    background: #e6f7e6;
+    cursor: pointer;
+}
+
+.wc-booking-calendar .bookable:hover {
+    background: #c9ecc9;
+}
+
+.wc-booking-calendar .not-bookable {
+    background: #ffebeb;
+    color: #999;
+}
+
+.wc-booking-calendar .booked {
+    background: #ffcccc;
+    color: #d00;
+}
+
+/* Admin styles */
+.wc-booking-details {
+    margin: 20px 0;
+}
+
+.wc-booking-details th {
+    text-align: left;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
+.wc-booking-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.wc-booking-status.confirmed {
+    background: #2ea2cc;
+}
+
+.wc-booking-status.paid {
+    background: #73a724;
+}
+
+.wc-booking-status.completed {
+    background: #21759b;
+}
+
+.wc-booking-status.cancelled {
+    background: #d54e21;
+}
+
+.wc-booking-status.pending {
+    background: #ffba00;
+    color: #000;
+}
+
+/* Employee admin styles */
+.wc-booking-employee-fields .form-field {
+    margin-bottom: 15px;
+}
+
+.wc-booking-employee-fields label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.wc-booking-employee-fields input[type="text"],
+.wc-booking-employee-fields input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
