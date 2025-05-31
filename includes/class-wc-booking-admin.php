@@ -179,3 +179,62 @@ class WC_Booking_Admin {
         }
     }
 }
+// init fonksiyonuna yeni AJAX handler ekleyin:
+public static function init() {
+    // ... diğer hook'lar ...
+    
+    add_action('wp_ajax_wc_booking_get_time_slots', [__CLASS__, 'get_time_slots']);
+    add_action('wp_ajax_wc_booking_get_employee_services', [__CLASS__, 'get_employee_services']);
+}
+
+// Yeni AJAX fonksiyonları ekleyin:
+public static function get_time_slots() {
+    check_ajax_referer('wc-booking-nonce', 'security');
+    
+    $date = sanitize_text_field($_POST['date']);
+    $product_id = absint($_POST['product_id']);
+    $employee_id = absint($_POST['employee_id']);
+    
+    $duration = get_post_meta($product_id, '_wc_booking_duration', true) ?: 60;
+    $slots = self::generate_time_slots($date, $duration, $employee_id);
+    
+    wp_send_json_success(array(
+        'slots' => $slots
+    ));
+}
+
+public static function get_employee_services() {
+    check_ajax_referer('wc-booking-nonce', 'security');
+    
+    $employee_id = absint($_POST['employee_id']);
+    $product_id = absint($_POST['product_id']);
+    
+    $services = wc_booking_get_services_for_product($product_id);
+    $formatted_services = array();
+    
+    foreach ($services as $service) {
+        $formatted_services[] = array(
+            'id' => $service->term_id,
+            'name' => $service->name
+        );
+    }
+    
+    wp_send_json_success(array(
+        'services' => $formatted_services
+    ));
+}
+
+private static function generate_time_slots($date, $duration, $employee_id) {
+    $slots = array();
+    $start_time = strtotime('09:00');
+    $end_time = strtotime('18:00');
+    
+    for ($time = $start_time; $time <= $end_time; $time += $duration * 60) {
+        $time_format = date('H:i', $time);
+        $slots[] = array(
+            'time' => $time_format
+        );
+    }
+    
+    return $slots;
+}
