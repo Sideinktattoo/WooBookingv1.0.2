@@ -147,3 +147,10 @@ function wc_booking_get_extras_for_product($product_id) {
         'order' => 'ASC',
     ));
 }
+// Initialize the plugin kısmını güncelleyin:
+add_action('plugins_loaded', function() {
+    // ... diğer init kodları ...
+    
+    // Yeni rapor sınıfını init edin
+    WC_Booking_Reports::init();
+});
